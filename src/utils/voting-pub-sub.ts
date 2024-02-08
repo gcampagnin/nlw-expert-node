@@ -1,4 +1,4 @@
-type Message = { pollOptionId: string, votes: number }
+type Message = { pollOptionId: string; votes: number }
 type Subscriber = (message: Message) => void
 
 class VotingPubSub {
@@ -14,7 +14,7 @@ class VotingPubSub {
 
   publish(pollId: string, message: Message) {
     if (!this.channels[pollId]) {
-      return;
+      return
     }
 
     for (const subscriber of this.channels[pollId]) {
